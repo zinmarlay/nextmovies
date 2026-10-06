@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-import { Clapperboard } from "lucide-react";
+import { Clapperboard, PlayIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
@@ -50,7 +50,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Button>Search</Button>
           </form>
         </header>
-        {children}
+        <div className="flex flex-1">
+          <aside className="p-4 border-r flex flex-col gap-2 min-w-50">
+            <Button variant="outline" className="justify-start">
+              <PlayIcon />
+              All Movies
+            </Button>
+            <Button>All Movies</Button>
+            <Button>Action</Button>
+            <Button>Drama</Button>
+            <Button>Animation</Button>
+          </aside>
+          <main className="flex-1 p-4"> {children}</main>
+        </div>
       </body>
     </html>
   );
