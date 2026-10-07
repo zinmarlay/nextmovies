@@ -27,7 +27,7 @@ export default async function Home() {
     <div>
       <h2 className="py-4 border-b mb-4 text-xl font-bold">Popular</h2>
       <div className="flex gap-2 flex-wrap">
-        {upcoming.map((movie) => {
+        {popular.map((movie) => {
           return <MovieCard key={movie.id} movie={movie} />;
         })}
       </div>
