@@ -7,6 +7,7 @@ import { Clapperboard, PlayIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { GenreType } from "@/types/global";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -65,6 +66,12 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         </header>
         <div className="flex flex-1">
           <aside className="p-4 border-r flex flex-col gap-2 min-w-50">
+            <Button variant="outline" className="flex justify-start">
+              <Link href={"/"} className="flex justify-start gap-2">
+                <PlayIcon />
+                All Movies
+              </Link>
+            </Button>
             {genres.map((genre) => {
               return (
                 <Button
@@ -72,8 +79,13 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
                   variant="outline"
                   className="justify-start"
                 >
-                  <PlayIcon />
-                  {genre.name}
+                  <Link
+                    href={`/genre/${genre.name}/${genre.id}`}
+                    className="flex justify-start items-center gap-2"
+                  >
+                    <PlayIcon />
+                    {genre.name}
+                  </Link>
                 </Button>
               );
             })}
