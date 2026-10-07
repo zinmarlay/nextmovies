@@ -59,9 +59,9 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             </Button>
             Next Movie
           </h1>
-          <form className="flex gap-1 items-center">
-            <Input placeholder="Search..." />
-            <Button>Search</Button>
+          <form action="/search" className="flex gap-1 items-center">
+            <Input name="q" placeholder="Search..." />
+            <Button type="submit">Search</Button>
           </form>
         </header>
         <div className="flex flex-1">
