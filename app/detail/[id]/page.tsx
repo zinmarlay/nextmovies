@@ -1,4 +1,5 @@
-import { CastType, MovieType, PersonType } from "@/types/global";
+import { MovieType, PersonType } from "@/types/global";
+import Link from "next/link";
 
 async function fetchMovie(id: string): Promise<MovieType> {
   const res = await fetch(`https://api.themoviedb.org/3/movie/${id}`, {
@@ -49,7 +50,10 @@ export default async function Detail({
               ) : (
                 <div className="h-69 bg-gray-200"></div>
               )}
-              <b>{cast.name}</b>
+              <Link href={`/person/${cast.id}`}>
+                <b>{cast.name}</b>
+              </Link>
+
               <div className="text-gray-600">{cast.character}</div>
             </div>
           );
