@@ -3,7 +3,7 @@
 Next Movie is a movie discovery application built with Next.js and the TMDB API. Browse popular and upcoming movies, filter by genre, search for a title, and view movie details with cast information.
 
 ![Next Movie demo preview]
-(docs/images/next-movie-demo.png)
+(docs/images/next-movie-demo.jpg)
 
 ## Features
 

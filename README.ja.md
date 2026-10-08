@@ -3,7 +3,7 @@
 Next Movie は、TMDB API を利用した映画検索・閲覧アプリケーションです。人気作品や近日公開作品の閲覧、ジャンル別の絞り込み、作品検索、作品詳細と出演者情報の確認ができます。
 
 ![Next Movie デモプレビュー]
-(docs/images/next-movie-demo.png)
+(docs/images/next-movie-demo.jpg)
 
 ## 機能
 
