@@ -1,5 +1,6 @@
 import MovieCard from "@/components/movie";
 import { MovieType } from "@/types/global";
+import { redirect } from "next/dist/server/api-utils";
 
 async function fetchUpcoming(): Promise<MovieType[]> {
   const res = await fetch("https://api.themoviedb.org/3/movie/upcoming", {

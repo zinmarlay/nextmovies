@@ -1,8 +1,10 @@
+"use client";
+
 import { MovieType } from "@/types/global";
 import Link from "next/link";
 
 const poster = "http://image.tmdb.org/t/p/w185";
-export default async function MovieCard({ movie }: { movie: MovieType }) {
+export default function MovieCard({ movie }: { movie: MovieType }) {
   return (
     <div className="w-46 border rounded" key={movie.id}>
       <Link href={`/detail/${movie.id}`}>

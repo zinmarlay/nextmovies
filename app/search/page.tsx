@@ -22,7 +22,7 @@ export default async function Search({
   const movies = await fetchSearch(q);
   return (
     <div>
-      <h2 className="p-4 border-b mb-4 text-xl font-bold">Search</h2>
+      <h2 className="p-4 border-b mb-4 text-xl font-bold">Search : {q}</h2>
       <div className="flex gap-2 flex-wrap">
         {movies.map((movie) => {
           return <MovieCard key={movie.id} movie={movie} />;

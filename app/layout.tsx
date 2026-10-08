@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { GenreType } from "@/types/global";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -39,6 +40,12 @@ async function fetchGenres(): Promise<GenreType[]> {
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   const genres = await fetchGenres();
 
+  async function search(formData: FormData) {
+    "use server";
+    const q = formData.get("q");
+    redirect(`/search?q=${q}`);
+  }
+
   return (
     <html
       lang="en"
@@ -59,7 +66,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             </Button>
             Next Movie
           </h1>
-          <form action="/search" className="flex gap-1 items-center">
+          <form action={search} className="flex gap-1 items-center">
             <Input name="q" placeholder="Search..." />
             <Button type="submit">Search</Button>
           </form>
